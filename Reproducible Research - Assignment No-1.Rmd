@@ -8,6 +8,8 @@ output:
 
 This document is prepared as a submission for Assignment No. 1 of the course Reproducible Research.  
 
+![Sample panel plot](instructions_fig/sample_panelplot.png) 
+
 ## Loading and preprocessing the data
 
 It is a good practice to set the working directory so that all files related to this assignment are contained together. This is followed by loading the data. 
