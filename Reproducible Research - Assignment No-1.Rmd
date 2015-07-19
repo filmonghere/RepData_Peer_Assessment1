@@ -8,7 +8,7 @@ output:
 
 This document is prepared as a submission for Assignment No. 1 of the course Reproducible Research.  
 
-![Sample panel plot](figure-html/unnamed-chunk-4-1.png) 
+(figure-html/unnamed-chunk-4-1.png) 
 
 ## Loading and preprocessing the data
 
