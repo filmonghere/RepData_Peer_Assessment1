@@ -13,7 +13,7 @@ This document is prepared as a submission for Assignment No. 1 of the course Rep
 It is a good practice to set the working directory so that all files related to this assignment are contained together. This is followed by loading the data. 
 
 ```{r, echo=TRUE, results='hold'}
-setwd("C:/Users/Filly/Documents/Reproducible_Research_Assignment_No.1") 
+setwd("C:/Users/Filly/Documents/Reproducible Research - Assignment No. 1") 
 library(data.table)
 data <- read.table("activity.csv", header=T, sep = ",")
 data <- data.table(data)  ## converts the dataframe into a datatable
@@ -52,7 +52,7 @@ MedianStepsPerDay <- round(median(StepsPerDay$V1), digit=0)
 MedianStepsPerDay
 ```
 
-The mean and median steps per day were found to be `r MeanStepsPerDay` and `r MedianStepsPerDay` respectively.
+The mean and median steps per day were found to be 9354 and 10395 respectively.
 
 ## What is the average daily activity pattern?
 
@@ -70,7 +70,7 @@ TimeIntervalMaxSteps <- which(StepsEvery5minutes$V1 == MaxSteps)
 TimeIntervalMaxSteps
 ```
 
-Therefore, the average maximum number of steps taken in 5 minutes across all the days was found to be `r MaxSteps` and this happened at the `r TimeIntervalMaxSteps` of the 5 minute intervals from the midnight, i.e., 8:40 AM.
+Therefore, the average maximum number of steps taken in 5 minutes across all the days was found to be 10927 and this happened at the 140th of the 5 minute intervals from the midnight, i.e., 8:40 AM.
 
 ## Imputing missing values
 
@@ -85,7 +85,7 @@ NewData <- NewData[,MedianSteps:=median(steps, na.rm = T), by='interval']
 NewData$steps[which(is.na(NewData$steps)==TRUE)] <- NewData$MedianSteps[which(is.na(NewData$steps)==TRUE)]
 ```
 
-In the data set, there were `r NoOfRowsContainingNAs` rows with incomplete information. 
+In the data set, there were 2304 rows with incomplete information. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -107,7 +107,7 @@ NewMedianStepsPerDay <- round(median(NewStepsPerDay$V1), digit=0)
 NewMedianStepsPerDay
 ```
 
-Before imputing the missing values, the mean and median steps per day were `r MeanStepsPerDay` and `r MedianStepsPerDay`, respectively. After imputing the missing values, were found to be `r NewMeanStepsPerDay` and `r NewMedianStepsPerDay`, respectively. As a result of the imputation process, the mean steps per day increased by 150 while the median remained constant. Also to see the significance of this change, some kind of t-test should be applied. 
+Before imputing the missing values, the mean and median steps per day were 9354 and 10395, respectively. After imputing the missing values, were found to be 9504 and 10395, respectively. As a result of the imputation process, the mean steps per day increased by 150 while the median remained constant. Also to see the significance of this change, some kind of t-test should be applied. 
 
 It has to be noted that the change in mean/median of the steps per day might differ depending on how the missing values were imputed. 
 
